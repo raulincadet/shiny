@@ -90,7 +90,7 @@ Avec *arrange*, on peut réarranger les lignes d'un tableau de données. Dans l'
 arrange(df_sal,salaire)
 ```
 
-Si on veut faire le tri, en partant du salaire le plus faible pour arriver au plus élevé, on ajoute la foncgtion *desc*.
+Si on veut faire le tri, en partant du salaire le plus élevé pour arriver au plus faible, on ajoute la foncgtion *desc*.
 
 ```{r arrange2,exercise=TRUE}
 arrange(df_sal,desc(salaire))
@@ -144,7 +144,7 @@ rename(df_sal,Payroll=salaire)
 
 ### relocate
 
-Avec *relocate*, il est possible de changer de position les colonnes d'un tableau de données. On peut utiliser les arguments *.after* et *.before* pour indiquer les positions souhaitées. Ci-dessous, nous mettons l'âge après le payroll. Puis, nous plaçons le sexe avant la dernière colonne.
+Avec *relocate*, il est possible de changer de position les colonnes d'un tableau de données. On peut utiliser les arguments *.after* et *.before* pour indiquer les positions souhaitées. Ci-dessous, nous mettons l'âge après le salaire. Puis, nous plaçons le sexe avant la dernière colonne.
 
 ```{r relocate1,exercise=TRUE}
 relocate(df_sal,age,.after = salaire)
@@ -179,7 +179,7 @@ group_by(df_sal,sexe)
 
 En affichant le nouveau tableau, aucun changement ne sera remarqué, bien qu'en réalité les groupes soient créés.
 
-Souvent on crée des groupes afin de présenter par groupe les résultats d'autres fonctions. Par exemple, pour avoir la moyenne du payroll et de l'âge, par sexe, on utilise le tableau où les données sont regroupées par sexe, *df_groupS*. Après l'avoir exécuté, vous pouvez remplacer *df_groupS* par *df_sal* et l'exécuter, pour voir la différence.
+Souvent on crée des groupes afin de présenter par groupe les résultats d'autres fonctions. Par exemple, pour avoir la moyenne du salaire et de l'âge, par sexe, on utilise le tableau où les données sont regroupées par sexe, *df_groupS*. Vous pouvez modifier la deuxième ligne de code, en remplacer *df_groupS* par *df_sal* et l'exécuter, pour voir la différence.
 
 ```{r groupby2,exercise=TRUE,message=FALSE,warning=FALSE}
 df_groupS<-group_by(df_sal,sexe)
@@ -214,7 +214,7 @@ df2_femme                                # Afficher les donnees du nouveau table
 
 ### Exercice - slice
 
-Utiliser *slice* pour extraire les données des lignes 1, 5, 10, et 20 du tableau *df_sal*. Nommer le nouveau tableau ainsi: *df_slice*. Puis, l'afficher, afin de voir le résultat de votre travail.
+Utiliser *slice* pour extraire les données des lignes 1, 5, 10, et 20 du tableau *df_sal*. Nommer le nouveau tableau ainsi: *df_slice*. Puis, l'afficher, afin de voir le résultat de votre travail. Si vous n'y arrivez pas, cliquez sur *Solution*, pour voir les lignes de code à exécuter.
 
 ```{r slice1b,exercise=TRUE}
 
@@ -222,7 +222,9 @@ Utiliser *slice* pour extraire les données des lignes 1, 5, 10, et 20 du tablea
 
 ```{r slice1b-solution}
 df_slice<-df_sal%>%
-  slice(c(1,5,10,20))
+  slice(c(1,5,10,20)) # pour indiquer les numeros des lignes a extraire
+
+df_slice              # pour afficher le nouveau tableau de données
 ```
 
 
@@ -235,7 +237,7 @@ Avec *arrange*, réarranger à partir du salaire, les lignes du tableau de donn�
 ```
 
 ```{r arrange1c-solution}
-df_Arr<-df_sal%>%
+df_sal%>%
   arrange(salaire)
 
 ```
@@ -247,7 +249,7 @@ Avec *arrange*, réarranger à partir du sexe et de l'âge, les lignes du tablea
 ```
 
 ```{r arrange2b-solution}
-df_ArrSA<-df_sal%>%
+df_sal%>%
   arrange(sexe,age)
 
 
@@ -261,7 +263,7 @@ Le pipe est très utile pour enchainer des opérations. Dans cette section, nous
 
 ### pipe - illustrations  
 
-Ci-dessous, nous regroupons les donn♪0es par sexe, puis nous calculons la moyenne du salaire. Nous obtenons alors la moyenne par sexe.
+Ci-dessous, nous regroupons les données par sexe, puis nous calculons la moyenne du salaire. Nous obtenons alors la moyenne par sexe.
 
 ```{r pipe1, message=FALSE, warning=FALSE,exercise=TRUE}
 df_sal%>%
@@ -344,8 +346,7 @@ Extraire les données des employés agés de plus de 50 ans, et calculer le nomb
 ```{r pipeExo4-solution,eval=FALSE}
 df_sal%>%
   filter(age>50)%>%
-  count(age)%>%
-  arrange(desc(n))
+  count(sexe)
 ```
 
 
@@ -382,7 +383,7 @@ df_sal%>%
 
 ### Exercice 7 - pipe
 
-Extraire les données des employés agés de moins de 30 ans, et calculer le nombre d'employés (la fréquence) par âge. Arranger les âges en fonction de leurs fréquences, avec la fonction *arrange*. Il faut arranger les âges en partant de l'âge le plus fréquent parmi les employés de moins de 20 ans au moins fréquent.
+Extraire les données des employés agés de moins de 28 ans, et calculer le nombre d'employés (la fréquence) par âge. Arranger les âges en fonction de leurs fréquences, avec la fonction *arrange*. Il faut arranger les âges en partant de l'âge le plus fréquent au moins fréquent, parmi les employés âgés de moins de 28 ans.
 
 ```{r pipeExo7,exercise=TRUE}
 
@@ -390,9 +391,10 @@ Extraire les données des employés agés de moins de 30 ans, et calculer le nom
 
 ```{r pipeExo7-solution,eval=FALSE}
 df_sal%>%
-  filter(age<30)%>%
+  filter(age<28)%>%
   count(age)%>%
   arrange(desc(n))
+
 ```
 
 
