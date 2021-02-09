@@ -1,5 +1,5 @@
 ---
-title: "Tidyverse: Manipulation de données avec dplyr"
+title: "Manipulation de données avec tidyverse"
 output: learnr::tutorial
 runtime: shiny_prerendered
 ---
@@ -38,7 +38,7 @@ df_sal                                 # pour afficher le tibble
 ``` 
 
 
-## Le fonctionnement du package dplyr
+## Le fonctionnement de *dplyr*
 
 Le package *dplyr* permet de manipuler et de traiter les données d'un tableau facilement. Le fonctionnement de dplyr se fait à partir de verbes qui indiquent l'opération à réaliser sur les données. En fait, les verbes sont utilisés comme noms des fonctions de *dplyr*. Par exemple, pour filtrer un tableau, afin de sélectionner une partie des données, le verbe filtrer, en anglais, est utiliser comme nom de fonction: *filter*. Nous verrons quelques verbes prochainement.
 
