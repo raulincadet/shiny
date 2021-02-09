@@ -120,9 +120,9 @@ $(document).ready(function () {
 <h2>Les packages de Tidyverse</h2>
 <p>Le package Tidyverse, maintenu par Hadley Wickham, est un ensemble de packages. Pour afficher la liste et le nombre de packages de Tidyverse, exécuter (Run, en anglais) les lignes de codes ci-dessous.</p>
 <div class="tutorial-exercise" data-label="liste_pack" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<pre class="text"><code>tidyverse_packages(include_self = FALSE)  # pour afficher la liste des packages de tidyverse
+<pre class="text"><code>tidyverse::tidyverse_packages(include_self = FALSE)  # pour afficher la liste des packages de tidyverse
 
-length(tidyverse_packages(include_self = FALSE)) # pour afficher le nombre de packages</code></pre>
+length(tidyverse::tidyverse_packages(include_self = FALSE)) # pour afficher le nombre de packages</code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"R code"}</script>
 </div>
 <p>Par défaut, <em>Tidyverse</em> figure dans la liste. Pour l’enlever, l’arguement <em>include_self</em> doit avoir <em>FALSE</em> comme valeur.</p>
@@ -456,7 +456,7 @@ output$`tutorial-exercise-liste_pack-output` <- renderUI({
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::store_exercise_cache("liste_pack", list(setup = NULL, chunks = list(list(label = "liste_pack", code = "tidyverse_packages(include_self = FALSE)  # pour afficher la liste des packages de tidyverse\n\nlength(tidyverse_packages(include_self = FALSE)) # pour afficher le nombre de packages\n", 
+learnr:::store_exercise_cache("liste_pack", list(setup = NULL, chunks = list(list(label = "liste_pack", code = "tidyverse::tidyverse_packages(include_self = FALSE)  # pour afficher la liste des packages de tidyverse\n\nlength(tidyverse::tidyverse_packages(include_self = FALSE)) # pour afficher le nombre de packages\n", 
     opts = list(label = "\"liste_pack\"", exercise = "TRUE"), 
     engine = "r")), code_check = NULL, error_check = NULL, check = NULL, 
     solution = NULL, options = list(eval = FALSE, echo = TRUE, 
@@ -476,8 +476,8 @@ learnr:::store_exercise_cache("liste_pack", list(setup = NULL, chunks = list(lis
         message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
         max.print = 1000, tutorial = TRUE, label = "liste_pack", 
-        exercise = TRUE, code = c("tidyverse_packages(include_self = FALSE)  # pour afficher la liste des packages de tidyverse", 
-        "", "length(tidyverse_packages(include_self = FALSE)) # pour afficher le nombre de packages", 
+        exercise = TRUE, code = c("tidyverse::tidyverse_packages(include_self = FALSE)  # pour afficher la liste des packages de tidyverse", 
+        "", "length(tidyverse::tidyverse_packages(include_self = FALSE)) # pour afficher le nombre de packages", 
         ""), out.width.px = 624, out.height.px = 384, params.src = "liste_pack, exercise=TRUE", 
         fig.num = 0, exercise.df_print = "paged", exercise.checker = "NULL"), 
     engine = "r"))

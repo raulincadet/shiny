@@ -1,0 +1,30 @@
+"0","library(learnr)"
+"2","Warning message:
+"
+"2","In as.POSIXlt.POSIXct(x, tz = tz) :"
+"2","
+ "
+"2"," unable to identify current timezone 'H':
+please set environment variable 'TZ'
+"
+"0","require(dplyr)"
+"2","Loading required package: dplyr
+"
+"2","
+Attaching package: ‘dplyr’
+
+"
+"2","The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+"
+"0","df_sal<-read.csv(""donneesSalaire.csv"")"
+"0","knitr::opts_chunk$set(echo = FALSE)"
+"0",""
+"0","#gradethis::gradethis_setup()"

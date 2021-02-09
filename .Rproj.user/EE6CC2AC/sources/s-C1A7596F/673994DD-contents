@@ -19,9 +19,9 @@ knitr::opts_chunk$set(echo = FALSE)
 Le package Tidyverse, maintenu par Hadley Wickham, est un ensemble de packages. Pour afficher la liste et le nombre de packages de Tidyverse, exécuter (Run, en anglais) les lignes de codes ci-dessous. 
 
 ```{r liste_pack, exercise=TRUE}
-tidyverse_packages(include_self = FALSE)  # pour afficher la liste des packages de tidyverse
+tidyverse::tidyverse_packages(include_self = FALSE)  # pour afficher la liste des packages de tidyverse
 
-length(tidyverse_packages(include_self = FALSE)) # pour afficher le nombre de packages
+length(tidyverse::tidyverse_packages(include_self = FALSE)) # pour afficher le nombre de packages
 
 ```
 
@@ -90,7 +90,7 @@ Avec *arrange*, on peut réarranger les lignes d'un tableau de données. Dans l'
 arrange(df_sal,salaire)
 ```
 
-Si on veut faire le tri, en partant du salaire le plus faible pour arriver au plus élevé, on ajoute la foncgtion *desc*.
+Si on veut faire le tri, en partant du salaire le plus élevé pour arriver au plus faible, on ajoute la foncgtion *desc*.
 
 ```{r arrange2,exercise=TRUE}
 arrange(df_sal,desc(salaire))

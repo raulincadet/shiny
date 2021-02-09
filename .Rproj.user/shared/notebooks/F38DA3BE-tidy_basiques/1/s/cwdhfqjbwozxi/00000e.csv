@@ -1,0 +1,6 @@
+"0","length(tidyverse::tidyverse_packages(include_self = FALSE)) # pour afficher le nombre de packages
+"
+"1","[1]"
+"1"," 26"
+"1","
+"

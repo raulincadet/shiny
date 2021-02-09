@@ -19,9 +19,9 @@ knitr::opts_chunk$set(echo = FALSE)
 Le package Tidyverse, maintenu par Hadley Wickham, est un ensemble de packages. Pour afficher la liste et le nombre de packages de Tidyverse, exécuter (Run, en anglais) les lignes de codes ci-dessous. 
 
 ```{r liste_pack, exercise=TRUE}
-tidyverse_packages(include_self = FALSE)  # pour afficher la liste des packages de tidyverse
+tidyverse::tidyverse_packages(include_self = FALSE)  # pour afficher la liste des packages de tidyverse
 
-length(tidyverse_packages(include_self = FALSE)) # pour afficher le nombre de packages
+length(tidyverse::tidyverse_packages(include_self = FALSE)) # pour afficher le nombre de packages
 
 ```
 
